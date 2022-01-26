@@ -1,0 +1,12 @@
+version: "2.4"
+services:
+  restarter:
+    build: .
+    image: rucciva/compose-reflex:v0.1.0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD:$PWD
+    working_dir: $PWD
+    command:
+      - -g config.yml -- docker-compose restart tail
+      - -g config2.yml -- docker-compose restart tail2

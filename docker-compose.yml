@@ -1,0 +1,8 @@
+version: "2.4"
+services:
+  tail:
+    image: debian
+    command: tail -f /dev/null
+  tail2:
+    image: debian
+    command: tail -f /dev/null
